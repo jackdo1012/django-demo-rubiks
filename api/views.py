@@ -34,6 +34,5 @@ class SpecificRubiksView(APIView):
         return Response({"success": True, "data": serializer.data}, status=status.HTTP_200_OK)
 
     def delete(self, request, pk):
-        print('hllo')
         Rubiks.objects.get(pk = pk).delete()
         return Response({"success": True, "message": "Rubiks deleted"}, status=status.HTTP_200_OK)
